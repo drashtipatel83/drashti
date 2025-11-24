@@ -1,89 +1,155 @@
-/* ---------- Global Styles ---------- */
-body {
+/* ======== Base ======== */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
     font-family: "Poppins", sans-serif;
-    background: #121212;              /* deep black */
-    color: #e0e0e0;                   /* soft grey text */
+    background: #0f0f0f;
+    color: #e4e4e4;
+    line-height: 1.6;
 }
 
-/* ---------- Center Wrapper ---------- */
+/* ======== Layout ======== */
 .container {
-    max-width: 400px;
-    margin: 80px auto;
-    padding: 30px;
-    background: #1e1e1e;              /* dark grey */
-    border: 1px solid #2e2e2e;        /* subtle border */
-    border-radius: 12px;
-    box-shadow: 0 0 25px rgba(0,0,0,0.4);
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    padding: 40px 60px;
 }
 
-/* ---------- Titles ---------- */
-.container h1 {
-    text-align: center;
-    margin-bottom: 25px;
-    font-size: 26px;
+header {
+    grid-column: 1 / -1;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #2a2a2a;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.name-block h1 {
+    font-size: 36px;
     color: #ffffff;
-    letter-spacing: 1px;
 }
 
-/* ---------- Input Fields ---------- */
-input[type="text"],
-input[type="email"],
-input[type="password"],
-select {
-    width: 100%;
-    padding: 12px;
-    margin: 12px 0;
-    background: #2a2a2a;
-    border: 1px solid #3a3a3a;
-    border-radius: 8px;
-    color: #e0e0e0;
-    font-size: 15px;
-    transition: 0.3s ease;
-}
-
-input:focus,
-select:focus {
-    border-color: #555;
-    outline: none;
-    background: #333;
-}
-
-/* ---------- Buttons ---------- */
-button {
-    width: 100%;
-    padding: 12px;
-    margin-top: 15px;
-    background: linear-gradient(145deg, #3a3a3a, #1a1a1a);
-    border: none;
-    border-radius: 8px;
-    color: #ffffff;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.3s ease;
-}
-
-button:hover {
-    background: linear-gradient(145deg, #4d4d4d, #2b2b2b);
-    transform: translateY(-2px);
-}
-
-/* ---------- Links ---------- */
-a {
-    display: block;
-    margin-top: 15px;
-    text-align: center;
-    color: #888;
+.sub a {
+    color: #aaaaaa;
     text-decoration: none;
+}
+
+.sub a:hover {
+    color: #ffffff;
+}
+
+.muted {
+    color: #b3b3b3;
+    font-size: 14px;
+}
+
+/* ======== Sections ======== */
+.section-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 25px 0 10px;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    border-left: 4px solid #4d4d4d;
+    padding-left: 10px;
+}
+
+/* ======== Experience Items ======== */
+.exp-item {
+    margin-bottom: 20px;
+    background: #1a1a1a;
+    padding: 18px 20px;
+    border-radius: 10px;
+    border: 1px solid #2a2a2a;
+    transition: 0.3s ease;
+}
+
+.exp-item:hover {
+    border-color: #555;
+    transform: translateY(-3px);
+}
+
+.exp-item h3 {
+    font-size: 18px;
+    color: #ededed;
+}
+
+/* ======== Bullets ======== */
+.bullets {
+    margin-top: 8px;
+    margin-left: 18px;
+}
+
+.bullets li {
+    margin-bottom: 6px;
+}
+
+/* ======== Certificates ======== */
+.certs {
+    margin-left: 18px;
+}
+
+.certs li {
+    margin-bottom: 6px;
+}
+
+/* ======== Tags ======== */
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tag {
+    padding: 6px 14px;
+    background: #2a2a2a;
+    border-radius: 20px;
+    font-size: 14px;
+    color: #dcdcdc;
+    border: 1px solid #3a3a3a;
     transition: 0.3s;
 }
 
-a:hover {
-    color: #bbb;
+.tag:hover {
+    background: #3b3b3b;
+    border-color: #5a5a5a;
 }
 
-/* ---------- Extra Styling ---------- */
-::placeholder {
-    color: #999;
+/* ======== Aside ======== */
+aside section {
+    background: #151515;
+    padding: 15px 20px;
+    border-radius: 12px;
+    border: 1px solid #2a2a2a;
+    margin-bottom: 25px;
+}
+
+/* ======== Links ======== */
+a {
+    color: #8fbaf5;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #c2dbff;
+}
+
+/* ======== Responsive ======== */
+@media (max-width: 900px) {
+    .container {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+
+    header {
+        flex-direction: column;
+        text-align: left;
+        gap: 10px;
+    }
 }
